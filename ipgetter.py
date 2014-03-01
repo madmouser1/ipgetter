@@ -75,7 +75,8 @@ class IPgetter(object):
         except Exception:
             return ''
         finally:
-            url.close()
+            if url:
+                url.close()
         
     def test(self):
         '''
