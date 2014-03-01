@@ -12,7 +12,7 @@ if PY3K:
 else:
     import urllib2 as urllib
 
-__version__ = "0.3"
+__version__ = "0.3.1"
 
 
 def myip():
