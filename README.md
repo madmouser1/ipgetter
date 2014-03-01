@@ -9,9 +9,12 @@ It picks your IP randomly from a serverlist to minimize request overhead on a si
 API Usage
 =========
 
->>> import ipgetter
->>> myip = ipgetter.myip()
->>> myip
+$ >>> import ipgetter
+
+$ >>> myip = ipgetter.myip()
+
+$ >>> myip
+
 '8.8.8.8'
 
 ChangeLog
