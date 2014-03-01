@@ -22,6 +22,9 @@ $ >>> myip
 ChangeLog
 =========
 
+0.2 (2014-03-01)
+ * Fix python 2 backwards compatibility
+
 0.1 (2014-02-28)
  * You can retrieve your IP.
  * Serverlist = 16 servers

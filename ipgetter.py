@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 import re
 import random
 from sys import version_info
@@ -11,7 +12,7 @@ if PY3K:
 else:
     import urllib2 as urllib
 
-__version__ = "0.1"
+__version__ = "0.2"
 
 
 def myip():
