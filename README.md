@@ -22,6 +22,9 @@ $ >>> myip
 ChangeLog
 =========
 
+0.3 (2014-03-01)
+ * Fix distutils issues
+
 0.2 (2014-03-01)
  * Fix python 2 backwards compatibility
 
