@@ -17,7 +17,7 @@ setup(
     version=get_version('ipgetter.py'),
     author='Fernando Giannasi <phoemur@gmail.com>',
     url='https://github.com/phoemur/ipgetter',
-    download_url = 'https://github.com/phoemur/ipgetter/tarball/0.3.1',
+    download_url = 'https://github.com/phoemur/ipgetter/tarball/0.3.2',
 
     description="Utility to fetch your external IP address",
     license="Public Domain",
