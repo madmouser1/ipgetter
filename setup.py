@@ -34,5 +34,5 @@ setup(
 
     py_modules=['ipgetter'],
 
-    long_description=open('README.md').read(),
+    long_description= open('./README.md').read(),
 )
