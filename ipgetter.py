@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
-
 import re
 import random
+import signal
 from sys import version_info
+from functools import wraps
 
 PY3K = version_info >= (3, 0)
 
@@ -12,9 +13,29 @@ if PY3K:
 else:
     import urllib2 as urllib
 
-__version__ = "0.3.2"
+__version__ = "0.4"
 
 
+def timeout(seconds, error_message = 'Function call timed out'):
+    '''
+    Decorator that provides timeout to a function
+    '''
+    def decorated(func):
+        def _handle_timeout(signum, frame):
+            raise TimeoutError(error_message)
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            signal.signal(signal.SIGALRM, _handle_timeout)
+            signal.alarm(seconds)
+            try:
+                result = func(*args, **kwargs)
+            finally:
+                signal.alarm(0)
+            return result
+        return wrapper
+    return decorated
+
+@timeout(120)
 def myip():
     return IPgetter().get_externalip()
 
@@ -42,7 +63,35 @@ class IPgetter(object):
                             'http://www.canyouseeme.org/',
                             'http://www.trackip.net/',
                             'http://myip.dnsdynamic.org/',
-                            'http://icanhazip.com/']
+                            'http://icanhazip.com/',
+                            'http://www.iplocation.net/',
+                            'http://www.howtofindmyipaddress.com/',
+                            'http://www.ipchicken.com/',
+                            'http://whatsmyip.net/',
+                            'http://www.ip-adress.com/',
+                            'http://checkmyip.com/',
+                            'http://www.tracemyip.org/',
+                            'http://checkmyip.net/',
+                            'http://www.lawrencegoetz.com/programs/ipinfo/',
+                            'http://www.findmyip.co/',
+                            'http://ip-lookup.net/',
+                            'http://www.dslreports.com/whois',
+                            'http://www.mon-ip.com/en/my-ip/',
+                            'http://www.myip.ru',
+                            'http://ipgoat.com/',
+                            'http://www.myipnumber.com/my-ip-address.asp',
+                            'http://www.whatsmyipaddress.net/',
+                            'http://formyip.com/',
+                            'http://www.displaymyip.com/',
+                            'http://www.bobborst.com/tools/whatsmyip/',
+                            'http://www.geoiptool.com/',
+                            'https://www.whatsmydns.net/whats-my-ip-address.html',
+                            'https://www.privateinternetaccess.com/pages/whats-my-ip/',
+                            'http://checkip.dyndns.com/',
+                            'http://myexternalip.com/',
+                            'http://www.ip-adress.eu/',
+                            'http://www.infosniper.net/',
+                            'http://wtfismyip.com/']
         
     def get_externalip(self):
         '''

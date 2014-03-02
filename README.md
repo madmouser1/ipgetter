@@ -22,6 +22,10 @@ $ >>> myip
 ChangeLog
 =========
 
+0.4 (2014-03-01)
+ * Serverlist = 44 servers
+ * Added timeout for getting the IP
+
 0.3.2 (2014-03-01)
  * Fix distutils issues
 
