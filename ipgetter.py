@@ -3,6 +3,7 @@
 import re
 import random
 import signal
+
 from sys import version_info
 from functools import wraps
 
@@ -112,7 +113,7 @@ class IPgetter(object):
         '''
         This function gets your IP from a specific server
         '''
-        
+        url = None
         opener = urllib.build_opener()
         opener.addheaders = [('User-agent', "Mozilla/5.0")]
         
