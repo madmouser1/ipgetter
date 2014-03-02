@@ -147,3 +147,6 @@ class IPgetter(object):
             print('{0} = {1} ocurrenc{2}'.format(ip if len(ip) > 0 else 'broken server', ocorrencia, 'y' if ocorrencia == 1 else 'ies'))
         print('\n') 
         print(resultdict)
+        
+if __name__ == '__main__':
+    print(myip())
