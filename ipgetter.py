@@ -117,11 +117,19 @@ class IPgetter(object):
         '''
         url = None
         opener = urllib.build_opener()
-        opener.addheaders = [('User-agent', "Mozilla/5.0")]
+        opener.addheaders = [('User-agent', "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0")]
         
         try:
             url = opener.open(server)
-            content = url.read().decode('utf-8') if PY3K else url.read()
+            content = url.read()
+            
+            # Didn't want to import chardet. Prefered to stick to stdlib
+            if PY3K:
+                try:
+                    content = content.decode('UTF-8')
+                except UnicodeDecodeError:
+                    content = content.decode('ISO-8859-1')
+            
             m = re.search('(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)',content)
             myip = m.group(0)
             return myip if len(myip) > 0 else ''
