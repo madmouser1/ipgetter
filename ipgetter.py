@@ -83,6 +83,7 @@ class IPgetter(object):
                             'http://www.myipnumber.com/my-ip-address.asp',
                             'http://www.whatsmyipaddress.net/',
                             'http://formyip.com/',
+                            'https://check.torproject.org/',
                             'http://www.displaymyip.com/',
                             'http://www.bobborst.com/tools/whatsmyip/',
                             'http://www.geoiptool.com/',
