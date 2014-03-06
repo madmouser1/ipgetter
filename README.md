@@ -19,6 +19,12 @@ $ >>> myip
 
 '8.8.8.8'
 
+Shell Usage
+=========
+
+$ python -m ipgetter    
+'8.8.8.8'
+
 ChangeLog
 =========
 
