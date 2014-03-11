@@ -11,19 +11,16 @@ If you want to add or remove your server from the list contact me on github
 API Usage
 =========
 
-$ >>> import ipgetter
-
-$ >>> myip = ipgetter.myip()
-
-$ >>> myip
-
-'8.8.8.8'
+    >>> import ipgetter
+    >>> myip = ipgetter.myip()
+    >>> myip
+       '8.8.8.8'
 
 Shell Usage
 =========
 
-$ python -m ipgetter    
-'8.8.8.8'
+    $ python -m ipgetter    
+    '8.8.8.8'
 
 ChangeLog
 =========
