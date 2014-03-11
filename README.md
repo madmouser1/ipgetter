@@ -17,10 +17,19 @@ API Usage
        '8.8.8.8'
 
 Shell Usage
-=========
+===========
 
     $ python -m ipgetter    
     '8.8.8.8'
+
+Installation
+============
+
+    # pip install ipgetter
+
+Or download the tarball or git clone the repository and then:
+
+    # python setup.py install
 
 ChangeLog
 =========
