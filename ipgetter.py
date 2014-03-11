@@ -94,7 +94,8 @@ class IPgetter(object):
                             'http://www.ip-adress.eu/',
                             'http://www.infosniper.net/',
                             'http://wtfismyip.com/',
-                            'http://ipinfo.io/']
+                            'http://ipinfo.io/',
+                            'http://httpbin.org/ip']
         
     def get_externalip(self):
         '''
