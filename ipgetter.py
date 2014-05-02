@@ -15,6 +15,13 @@ API Usage
     >>> myip = ipgetter.myip()
     >>> myip
     '8.8.8.8'
+
+    >>> ipgetter.IPgetter().test()
+
+    Number of servers: 47
+    IP's :
+    8.8.8.8 = 47 ocurrencies
+
 """
 
 import re
